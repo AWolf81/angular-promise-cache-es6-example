@@ -1,0 +1,14 @@
+/*html, body {
+    position: relative;
+    overflow-x: hidden;
+    height: 100%;
+}*/
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}

@@ -1,0 +1,15 @@
+// HTTP is a WeakMap referencing to $http service
+
+const userApi = 'http://jsonplaceholder.typicode.com/users/';
+
+const responseHandler = (result) => {
+    return result.data;
+};
+
+const errorHandler = (err) => {
+    return err;
+}
+
+getUser(id) {
+    return HTTP.get(this).get(userApi + id).then(responseHandler, errorHandler);
+}

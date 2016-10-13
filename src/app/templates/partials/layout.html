@@ -1,0 +1,19 @@
+<h1>{{mainCtrl.title}}</h1>
+<h2>Code</h2>
+<div ui-view="code">
+</div>
+
+<h1>Output</h1>
+<div ui-view="output"></div>
+<div>Number of HTTP requests: {{ mainCtrl.numberOfHttpRequests }}</div>
+<div>Number of resolved promises: {{ mainCtrl.numberOfResolvedPromises }}</div>
+<div ng-if="mainCtrl.expirationTime > 0">Expiration time of cached promise (in ms): {{ mainCtrl.expirationTime }}</div>
+
+<h1>Actions</h1>
+<!-- sendRequest will be different if caching is used -->
+<button class="btn btn-default" ng-click="mainCtrl.sendRequest()">Send a request</button>
+<button class="btn btn-default" ng-click="mainCtrl.reset()">Reset</button>
+<button class="btn btn-default" ng-click="mainCtrl.remove()">Remove</button>
+<button class="btn btn-default" ng-click="mainCtrl.removeAll()">Remove Everything</button>
+<button class="btn btn-default" ng-click="mainCtrl.clearLocalstorage()">Clear Local Storage</button>
+<!--<div ui-view=""></div>-->

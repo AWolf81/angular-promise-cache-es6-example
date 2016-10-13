@@ -1,0 +1,49 @@
+{
+  "name": "angular-promisecache-example",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server -d --colors",
+    "start:prod": "serve dist",
+    "build": "rimraf dist && webpack -p --config ./webpack.production.config.js",
+    "lint": "eslint ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "A. Wolf <awolf2904@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-highlightjs": "^0.6.2",
+    "angular-promise-cache": "^0.1.1",
+    "angular-ui-bootstrap": "^2.2.0",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.7",
+    "ribbon.css": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^7.0.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.7.1",
+    "eslint-config-google": "^0.6.0",
+    "eslint-loader": "^1.5.0",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.22.0",
+    "ng-annotate": "^1.2.1",
+    "ng-annotate-loader": "^0.2.0",
+    "node-sass": "^3.10.1",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.0.2",
+    "serve": "^1.4.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

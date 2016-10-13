@@ -1,0 +1,33 @@
+// PROMISE_CACHE and HTTP are WeakMaps referenced to promiseCache and $http service
+
+const userApi = 'http://jsonplaceholder.typicode.com/users/';
+
+const responseHandler = (result) => {
+    return result.data;
+};
+
+const errorHandler = (err) => {
+    return err;
+}
+
+getCachedUser(id) {
+    let promiseCache = PROMISE_CACHE.get(this);
+
+    return promiseCache({
+        key: 'example',
+        promise:
+            () => {
+                return HTTP.get(this)
+                        .get(userApi + id);
+            },
+        ttl: ttl,
+        // New feature in v0.0.3 - supports forcefully expiring the promise
+        // cache on a failure if this function returns true
+        expireOnFailure: function(request) {
+            return request.status !== 200;
+        },
+        // New feature in v0.0.5 - local storage support
+        localStorageEnabled: true,
+        localStorageKey: 'example.ls'
+    }).then(responseHandler, errorHandler);
+}
