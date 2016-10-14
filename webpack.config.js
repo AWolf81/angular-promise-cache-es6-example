@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     context: __dirname,
     entry: {
-        app: './src/app/index.js'
+        app: './app/index.js'
     },
     devServer: {
         contentBase: 'build',
@@ -23,7 +23,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 loaders: ['eslint'],
-                include: './src' // PATHS.app
+                include: './app' // PATHS.app
             }
         ],
         loaders: [
@@ -51,7 +51,7 @@ module.exports = {
     },
     resolve: {
         extensions: ['', '.js', '.es6'],
-        modules: ['node_modules', 'src'],
+        modules: ['node_modules', 'app'],
         alias: {
             'bootstrap-css': path.resolve(__dirname, 'node_modules/bootstrap/dist/css/bootstrap.css'),
             'highlight-css': path.resolve(__dirname, 'node_modules/highlight.js/styles/github.css'),
@@ -60,7 +60,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html',
+            template: 'app/index.html',
             inject: 'body'
         })
     ]
